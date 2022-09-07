@@ -1,0 +1,1 @@
+AutomateCalendar è uno script python che consente di sincronizzare automaticamente l'orario dell'università di Trento con google calendar, si aggiorna automaticamente ogni 2h per eventuali modifiche di aula/orario ed inoltre rende gli eventi completamente personalizzabili in colore, notifiche ecc. 
