@@ -98,19 +98,18 @@ def main():
 
     for component in gcal.walk():
         if component.name == "VEVENT":
-            print(component)
             if(inizio_semestre.isoformat() <= component.get('DTSTART').dt.isoformat() <= fine_semestre.isoformat()):
                 location =  component.get('location')
                 if "Aula A" in component.get('location'):
                     location = "Polo Ferrari - Povo 1"
                 elif "Aula B" in component.get('location'):
                     location = "Polo Ferrari - Povo 2"
-                stato = component.get("status");
+                stato = component.get("status") +  " - "
                 if("CANCELLED" not in stato):
                     stato = ""
                     
                 event = {
-                    'summary': stato + " - " + component.get('summary'),
+                    'summary': stato + component.get('summary'),
                     'location': location,
                     'description': component.get('description') + IDENTIFY_CHAR,
                     'colorId' : COLORS[corsi.index(component.get('summary'))],
